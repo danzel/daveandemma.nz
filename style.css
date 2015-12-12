@@ -7,27 +7,41 @@ html, body {
 	background: black;
 }
 
-/* TODO: Need to scale to height or width so that it fills - mobile especially */
 .background-image {
+	position: absolute;
+	left: 0;
+	top: 0;
+	
 	width:100%;
 	height: 100%;
 	
 	background-size: cover;
+	background-position: bottom right;
+	animation: imageAnimation 18s linear infinite 0s;
 }
 
 .bg-1 {
 	background-image: url('1.jpg');
-	background-position: bottom right;
 }
 
 .bg-2 {
 	background-image: url('2.jpg');
-	background-position: 50% 100%;
+	animation-delay: 6s;
+	opacity: 0;
 }
 
 .bg-3 {
 	background-image: url('3.jpg');
-	background-position: bottom right;
+	animation-delay: 12s;
+	opacity: 0;
+}
+
+@keyframes imageAnimation { 
+    0% { opacity: 0; animation-timing-function: ease-in; }
+    8% { opacity: 1; animation-timing-function: ease-out; }
+    33% { opacity: 1 }
+    40% { opacity: 0 }
+    100% { opacity: 0 }
 }
 
 .heading-overlay {
@@ -103,6 +117,15 @@ a:hover{
 	}
 	p {
 		margin: 0.5em 0;
+	}
+	.bg-1 {
+		background-image: url('1-mob.jpg');
+	}
+	.bg-2 {
+		background-image: url('2-mob.jpg');
+	}
+	.bg-3 {
+		background-image: url('3-mob.jpg');
 	}
 }
 
